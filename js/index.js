@@ -41,6 +41,7 @@ class Slider {
 		this.addListeners();
 		
 	}
+
 	addListeners() {
 		this.prevBtn.addEventListener('click',() => this.changeSlide(this.currentSlide-1))
 		this.nextBtn.addEventListener('click',() => this.changeSlide(this.currentSlide+1))
@@ -59,6 +60,7 @@ class Slider {
 		 : this.nextBtn.removeAttribute('disabled');
 		
 	}
+
 	changeSlide(index) {
 		if(index === -1 || index=== this.slideArrayLength) return;
 
@@ -67,15 +69,13 @@ class Slider {
 		this.setSlideAtributes(index)
 		this.disableButtons();
 		this.addCaption();
-
-
 	}
 
 	addCaption() {
 		this.slideCaption.innerText = ` dsf ${this.currentSlide +1}/${this.slideArrayLength}`;
 	}
+
 	setSlideAtributes(index) {
 		this.image.setAttribute('src',this.images[index]);
-
 	}
 }
